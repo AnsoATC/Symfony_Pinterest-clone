@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Pinterest-clone</title>
+    </head>
+    <body>
+        <h2>Pins Index</h2>
+
+        <a href="{{ path('app_pins_create') }}">create pin</a>
+
+        {% for pin in pins %}
+            <article>
+                <h3><a href="{{ path('app_pins_show', {'id': pin.id}) }}">{{ pin.title }}</a></h3>
+                <p>{{ pin.description }}</p>
+            </article>
+        {% else %}
+            <p>Sorry, no pin yet !</p>
+        {% endfor %}
+
+    </body>
+
+</html>
